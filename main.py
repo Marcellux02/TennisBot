@@ -13,6 +13,7 @@ def main():
     dp.add_handler(CommandHandler("audio", R.audio))
     dp.add_handler(CommandHandler("comandi", R.comandi))
     dp.add_handler(CommandHandler("documentazione", R.documentazione))
+    dp.add_handler(CommandHandler("versione_bot", R.versione_bot))
     dp.add_handler(MessageHandler(Filters.text, R.handle_message))
 
     updater.start_polling()

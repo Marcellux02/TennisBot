@@ -68,4 +68,5 @@ def versione_bot(update, context):
 
 
 def documentazione(update, context):
-    update.message.reply_text("Documentazione del bot disponibile a questo link: \n")
+    update.message.reply_text("Documentazione del bot disponibile a questo link: "
+                              "\nhttps://github.com/Marcellux02/TennisBot")
