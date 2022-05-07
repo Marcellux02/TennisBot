@@ -1,0 +1,12 @@
+{
+  "versioni": [
+    {
+      "versione": "1.0.0",
+      "descrizione": "Versione iniziale del bot, pieno di bug ma arriveranno aggiornamenti"
+    },
+    {
+      "versione": "1.0.1",
+      "descrizione": "Aggiunti vari comandi e risolto alcuni bug"
+    }
+  ]
+}
