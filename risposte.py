@@ -21,13 +21,29 @@ def handle_message(update, context):
         rand = random.randint(0, 14)
         path = str("Foto18/Tette/" + str(data.T[rand]))
         update.message.reply_photo(photo=open(path, "rb"))
+    if "venerd" in text:
+        bot.send_audio(chat_id=update.message.chat_id, audio=open("Audio/venerdi.mp3", 'rb'))
+    if "bimbo" in text:
+        bot.send_audio(chat_id=update.message.chat_id, audio=open("Audio/bimbomerda.mp3", 'rb'))
+    if "cringe" in text:
+        bot.send_audio(chat_id=update.message.chat_id, audio=open("Audio/cringe.mp3", 'rb'))
+    if "audioacaso" in text:
+        with open('dati.json', 'r') as f:
+            temp = json.load(f)
+        rand = random.randint(0, len(temp["audio"]))
+        for i in temp["audio"]:
+            # Estremamente poco efficiente ma devo studiare di più python e so farlo solo così haha
+            if i["index"] == rand:
+                path = "Audio/{}.mp3".format(i["nome"])
+                print(path)
+                bot.send_audio(chat_id=update.message.chat_id, audio=open(path, 'rb'))
 
 
 def help_message(update, context):
     update.message.reply_text('TENNIS GANG BOT \n' +
                               'Comandi per iniziare: \n' +
                               '/help_gang per avere questo messaggio \n' +
-                              '/menuleoncino per il menu del leoncino \n' +
+                              '/menu per i menu supportati \n' +
                               '/immagini per sapere che immagini può mandare il bot \n' +
                               '/audio per sapere che audio può mandare il bot \n' +
                               '/comandi per comandi utili \n' +
@@ -36,10 +52,21 @@ def help_message(update, context):
                               )
 
 
-def menu_leoncino(update, context):
-    menu = ['Menu/Menu1.jpg', 'Menu/Menu2.jpg']
-    bot.send_media_group(media=[InputMediaPhoto(open(menu[0], 'rb')),
-                                InputMediaPhoto(open(menu[1], 'rb'))], chat_id=update.message.chat_id)
+def menu(update, context):
+    update.message.reply_text('Ecco i seguenti ristoranti supportati: \nLeoncino: /menuleoncino\n'
+                              'Tennis: /menutennis')
+
+
+def menu_Leoncino(update, context):
+    menuL = ['Menu/leoncino/Menu1.jpg', 'Menu/leoncino/Menu2.jpg']
+    bot.send_media_group(media=[InputMediaPhoto(open(menuL[0], 'rb')),
+                                InputMediaPhoto(open(menuL[1], 'rb'))], chat_id=update.message.chat_id)
+
+
+def menu_Tennis(update, context):
+    menuT = ['Menu/tennis/Menu1.jpg', 'Menu/tennis/Menu2.jpg']
+    bot.send_media_group(media=[InputMediaPhoto(open(menuT[0], 'rb')),
+                                InputMediaPhoto(open(menuT[1], 'rb'))], chat_id=update.message.chat_id)
 
 
 def immagini(update, context):
@@ -49,7 +76,11 @@ def immagini(update, context):
 
 
 def audio(update, context):
-    update.message.reply_text('(Comandi in fase di sviluppo)')
+    update.message.reply_text('COMANDI AUDIO:'
+                              '\n✔audioacaso inoltra un audio casuale tra i possibili'
+                              '\n✔audiobestemmie inoltra un audio con bestemmie (Manutenzione)'
+                              '\n✔audiociccio inoltra cicciogamer (Manutenzione)'
+                              '\n✔audiomasseo inoltra ilmasseo (Manutenzione)')
 
 
 def comandi(update, context):
@@ -57,7 +88,7 @@ def comandi(update, context):
 
 
 def versione_bot(update, context):
-    with open('versioni.json', 'r') as f:
+    with open('dati.json', 'r') as f:
         cronologia_aggiornamenti = json.load(f)
         final_message = ""
     for agg in cronologia_aggiornamenti["versioni"]:

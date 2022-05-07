@@ -15,11 +15,11 @@ def updateVersion(nUpdate, description):
         return
     else:
         try:
-            with open('versioni.json', 'r+') as f:
+            with open('dati.json', 'r+') as f:
                 temp = json.load(f)
                 temp["versioni"].append(x)
                 f.seek(0)
-                json.dump(temp, f, indent=2)
+                json.dump(temp, f, indent=4)
         except Exception as e:
             print('Errore nell\'apertura del file ' + str(e))
 
@@ -28,13 +28,17 @@ def main():
     # UpdateVersion viene modificato internamente quando c'è un nuovo aggiornamento.
     updateVersion(None, None)
     dp = updater.dispatcher
+
+    dp.add_handler(CommandHandler("start", R.help_message))
     dp.add_handler(CommandHandler("help_gang", R.help_message))
-    dp.add_handler(CommandHandler("menuleoncino", R.menu_leoncino))
+    dp.add_handler(CommandHandler("menu", R.menu))
     dp.add_handler(CommandHandler("immagini", R.immagini))
     dp.add_handler(CommandHandler("audio", R.audio))
     dp.add_handler(CommandHandler("comandi", R.comandi))
     dp.add_handler(CommandHandler("documentazione", R.documentazione))
     dp.add_handler(CommandHandler("versione_bot", R.versione_bot))
+    dp.add_handler(CommandHandler("menuleoncino", R.menu_Leoncino))
+    dp.add_handler(CommandHandler("menutennis", R.menu_Tennis))
     dp.add_handler(MessageHandler(Filters.text, R.handle_message))
 
     updater.start_polling()

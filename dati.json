@@ -1,0 +1,108 @@
+{
+    "versioni": [
+        {
+            "versione": "1.0.0",
+            "descrizione": "Versione iniziale del bot, pieno di bug ma arriveranno aggiornamenti"
+        },
+        {
+            "versione": "1.0.1",
+            "descrizione": "Aggiunti vari comandi e risolto alcuni bug"
+        },
+        {
+            "versione": "1.1.0",
+            "descrizione": "Diverse migliorie software e ottimizzazione. Aggiunti 14 audio super dank e comandi per essi. Supporto per altri ristoranti nel prossimo aggiornamento"
+        }
+    ],
+    "audio": [
+        {
+            "nome": "allarmefroci",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 0
+        },
+        {
+            "nome": "amongus",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 1
+        },
+        {
+            "nome": "bimbomerda",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 2
+        },
+        {
+            "nome": "cicciodii",
+            "ilmasseo": false,
+            "ciccio": true,
+            "index": 3
+        },
+        {
+            "nome": "cringe",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 4
+        },
+        {
+            "nome": "fortnite-default-dance-bass-boosted",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 5
+        },
+        {
+            "nome": "gigachad-theme-music",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 6
+        },
+        {
+            "nome": "hai-lodato",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 7
+        },
+        {
+            "nome": "lol",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 8
+        },
+        {
+            "nome": "macchina-da-guerra",
+            "ilmasseo": true,
+            "ciccio": false,
+            "index": 9
+        },
+        {
+            "nome": "mastinociccio",
+            "ilmasseo": false,
+            "ciccio": true,
+            "index": 10
+        },
+        {
+            "nome": "PH",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 11
+        },
+        {
+            "nome": "saltellante-masseo",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 12
+        },
+        {
+            "nome": "sium",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 13
+        },
+        {
+            "nome": "venerdi",
+            "ilmasseo": false,
+            "ciccio": false,
+            "index": 14
+        }
+    ]
+}
